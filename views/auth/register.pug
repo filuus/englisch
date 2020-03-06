@@ -1,0 +1,29 @@
+extends ../templates/auth-template.pug
+
+block content
+    form(action="/register" method="POST")
+        label Adress email
+        input(
+            type="email"
+            name="email_adress"
+            value=validated ? validated.email_adress : ''
+        )
+        if(errors && errors.email_adress)
+            p #{errors.email_adress.msg}
+        label Password
+        input(
+            type="password"
+            name="password"
+            value=validated ? validated.password : ''
+        )
+        if(errors && errors.password)
+            p #{errors.password.msg}
+        button.btn.waves-effect.waves-light(
+            type="submit"
+        ) Register
+        .row
+            p.col
+                | Do you have account? 
+                a(href="/login") Log in
+    if(formMessage && formMessage.length > 0)
+        p #{ formMessage }

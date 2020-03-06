@@ -1,0 +1,11 @@
+extends ../templates/main-template.pug
+
+block content
+    .fiszka
+    input(id="idBunch" value=idBunch hidden)
+    input(id="level" value=user.level hidden)
+    input(id="limitWords" value=user.limitWords hidden)
+
+block script
+    script
+        include ../../public/scripts/fiches.js

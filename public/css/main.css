@@ -1,0 +1,9 @@
+.form-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disactive {
+  display: none;
+}

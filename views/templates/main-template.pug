@@ -1,0 +1,53 @@
+html
+    head
+        meta(charset="utf-8")
+        //- meat(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+        link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+        link(rel="stylesheet" type="text/css" href="/css/main.css")
+        link(rel="stylesheet" type="text/css" href="/css/fiches.css")
+    body(class="grey.lighten-5")
+        nav
+            .nav-wrapper
+                .container
+                    a(href="#" class="brand-logo")
+                    a(href="#" class="sidenav-trigger" data-target="slide_out")
+                        i.material-icons menu
+                    ul(class="hide-on-med-and-down right")
+                        li(class="active")
+                            a(href="/") Home
+                        li
+                            a(href="/fiches") Fiches
+                        li
+                            a(href="/logout") Log out
+            
+            ul(class="sidenav s10 m4 l2" id="slide_out")
+                li
+                    .user-view
+                        a(href="#email")
+                            span(class="email grey-text") #{user.email}
+                li(class="active")
+                    a(href="/") Home
+                        i.material-icons home
+                li
+                    a(href="#" class="fiches-button") Fiches
+                        i.material-icons filter_none
+                div(class="bunches disactive")
+                    ul
+                        each val, index in bunches
+                            li
+                                a(href=`/fiches/${index + 1}/show`) #{val}
+
+                li
+                    div(class="divider")
+                li
+                    a(href="/logout") Log out
+                        i.material-icons exit_to_app
+
+        block content
+
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
+    script
+        include ../../public/scripts/menu.js
+    block script
