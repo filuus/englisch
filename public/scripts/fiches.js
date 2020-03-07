@@ -86,7 +86,6 @@ class Colection {
   }
 
   display() {
-    console.log(this.cards);
     let chit = document.querySelector(".fiszka");
     chit.innerHTML = ``;
     let actualCard = this.cards[this.idOfCard];
