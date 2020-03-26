@@ -33,6 +33,10 @@ class Card {
       sentence.classList.add("sentence");
       sentence.innerText = this.sentence;
       chit.appendChild(sentence);
+      const getTranslateButton = document.createElement("a");
+      getTranslateButton.id = "get-translate-button";
+      getTranslateButton.innerText = "Show back site";
+      chit.appendChild(getTranslateButton);
     } else {
       let translate = document.createElement("h3");
       translate.classList.add("word");
@@ -42,9 +46,6 @@ class Card {
       translateSentence.classList.add("sentence");
       translateSentence.innerText = this.translateSentence;
       chit.appendChild(translateSentence);
-      const getTranslateButton = document.createElement("a");
-      getTranslateButton.id = "get-translate-button";
-      getTranslateButton.innerText = "Show back site";
     }
     let knowbutton = document.createElement("a");
     knowbutton.classList.add("know-button");
@@ -105,7 +106,7 @@ class Colection {
     knowButton.addEventListener("click", this.pass.bind(this));
     unknowButton.addEventListener("click", this.fail.bind(this));
     getTranslateButton.addEventListener("click", () => {
-      this.isFront = true;
+      this.isFront = false;
       card.show(this.isFront);
     });
   }
