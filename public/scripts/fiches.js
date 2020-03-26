@@ -42,22 +42,24 @@ class Card {
       translateSentence.classList.add("sentence");
       translateSentence.innerText = this.translateSentence;
       chit.appendChild(translateSentence);
-      let knowbutton = document.createElement("a");
-      knowbutton.classList.add("know-button");
-      chit.appendChild(knowbutton);
-
-      let unknowbutton = document.createElement("a");
-      unknowbutton.classList.add("unknow-button");
-      chit.appendChild(unknowbutton);
-      let unknowIcon = document.createElement("i");
-      unknowIcon.classList.add("material-icons");
-      unknowIcon.innerText = "reply";
-      unknowbutton.appendChild(unknowIcon);
-      let knowIcon = document.createElement("i");
-      knowIcon.classList.add("material-icons");
-      knowIcon.innerText = "done";
-      knowbutton.appendChild(knowIcon);
+      const getTranslateButton = document.createElement("a");
+      getTranslateButton.id = "get-translate-button";
+      getTranslateButton.innerText = "Show back site";
     }
+    let knowbutton = document.createElement("a");
+    knowbutton.classList.add("know-button");
+    chit.appendChild(knowbutton);
+    let unknowbutton = document.createElement("a");
+    unknowbutton.classList.add("unknow-button");
+    chit.appendChild(unknowbutton);
+    let unknowIcon = document.createElement("i");
+    unknowIcon.classList.add("material-icons");
+    unknowIcon.innerText = "reply";
+    unknowbutton.appendChild(unknowIcon);
+    let knowIcon = document.createElement("i");
+    knowIcon.classList.add("material-icons");
+    knowIcon.innerText = "done";
+    knowbutton.appendChild(knowIcon);
   }
 }
 
@@ -99,8 +101,13 @@ class Colection {
     card.show(this.isFront);
     const knowButton = document.querySelector(".know-button");
     const unknowButton = document.querySelector(".unknow-button");
+    const getTranslateButton = document.querySelector("#get-translate-button");
     knowButton.addEventListener("click", this.pass.bind(this));
     unknowButton.addEventListener("click", this.fail.bind(this));
+    getTtranslateButton.addEventListener("click", () => {
+      this.isFront = true;
+      card.show(this.isFront);
+    });
   }
 
   getXY(e) {
