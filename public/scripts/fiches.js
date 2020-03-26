@@ -104,7 +104,7 @@ class Colection {
     const getTranslateButton = document.querySelector("#get-translate-button");
     knowButton.addEventListener("click", this.pass.bind(this));
     unknowButton.addEventListener("click", this.fail.bind(this));
-    getTtranslateButton.addEventListener("click", () => {
+    getTranslateButton.addEventListener("click", () => {
       this.isFront = true;
       card.show(this.isFront);
     });
