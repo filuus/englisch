@@ -35,7 +35,7 @@ class Card {
       chit.appendChild(sentence);
       const getTranslateButton = document.createElement("a");
       getTranslateButton.id = "get-translate-button";
-      getTranslateButton.innerText = "Show back site";
+      getTranslateButton.innerText = "Show Back site";
       chit.appendChild(getTranslateButton);
     } else {
       let translate = document.createElement("h3");
@@ -46,6 +46,10 @@ class Card {
       translateSentence.classList.add("sentence");
       translateSentence.innerText = this.translateSentence;
       chit.appendChild(translateSentence);
+      const getWordButton = document.createElement("a");
+      getWordButton.id = "get-word-button";
+      getWordButton.innerText = "Show Front site";
+      chit.appendChild(getWordButton);
     }
     let knowbutton = document.createElement("a");
     knowbutton.classList.add("know-button");
@@ -102,11 +106,11 @@ class Colection {
     card.show(this.isFront);
     const knowButton = document.querySelector(".know-button");
     const unknowButton = document.querySelector(".unknow-button");
-    const getTranslateButton = document.querySelector("#get-translate-button");
+    const getWordButton = document.querySelector("#get-word-button");
     knowButton.addEventListener("click", this.pass.bind(this));
     unknowButton.addEventListener("click", this.fail.bind(this));
-    getTranslateButton.addEventListener("click", () => {
-      this.isFront = false;
+    getWordButton.addEventListener("click", () => {
+      this.isFront = true;
       card.show(this.isFront);
     });
   }
