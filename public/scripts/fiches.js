@@ -111,7 +111,7 @@ class Colection {
     unknowButton.addEventListener("click", this.fail.bind(this));
     getWordButton.addEventListener("click", () => {
       this.isFront = true;
-      card.show(this.isFront);
+      this.display();
     });
   }
 
