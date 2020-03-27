@@ -33,7 +33,7 @@ function getBunches(req, res, next) {
   });
 }
 
-// router.use(checkAuth);
+router.use(checkAuth);
 router.use(getUser);
 router.use(getBunches);
 
