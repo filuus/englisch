@@ -85,7 +85,9 @@ class Colection {
 
   pass() {
     this.cards[this.idOfCard].quantityOfRepeats = this.quantityOfLoops;
-    if (this.cards.filter(el => el.quantityOfRepeats != -1).length === 0) {
+    const tempCards = this.cards.filter(el => el.quantityOfRepeats != -1);
+    console.log(tempCards);
+    if (tempCards.length === 0) {
       console.log("Done1");
       this.endOfLearn();
     } else {
