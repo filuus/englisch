@@ -157,6 +157,7 @@ class Colection {
       this.quantityOfSlice++;
     } while (this.cards[this.idOfCard].quantityOfRepeats !== -1);
     this.quantityOfLoops = this.quantityOfSlice % this.quantityOfCards;
+    this.isFront = false;
     this.display();
   }
 
@@ -165,8 +166,9 @@ class Colection {
       this.idOfCard =
         (this.idOfCard + this.quantityOfCards - 1) % this.quantityOfCards;
     } while (this.cards[this.idOfCard].quantityOfRepeats !== -1);
-
+    this.isFront = false;
     this.display();
+    console.log(this.cards);
   }
 }
 
