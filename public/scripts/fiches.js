@@ -85,11 +85,20 @@ class Colection {
 
   pass() {
     this.cards[this.idOfCard].quantityOfRepeats = this.quantityOfLoops;
-    this.next();
+    if (!this.cards.filter(el => el.quantityOfRepeats != -1)) {
+      this.next();
+    } else {
+      this.endOfLearn();
+    }
   }
 
   fail() {
     this.next();
+  }
+
+  endOfLearn() {
+    let chit = document.querySelector(".fiszka");
+    chit.innerHTML = `Done!`;
   }
 
   display() {
