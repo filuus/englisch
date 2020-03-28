@@ -86,6 +86,7 @@ class Colection {
   pass() {
     this.cards[this.idOfCard].quantityOfRepeats = this.quantityOfLoops;
     if (this.cards.filter(el => el.quantityOfRepeats != -1).length === 0) {
+      console.log("Done1");
       this.endOfLearn();
     } else {
       this.next();
@@ -97,6 +98,7 @@ class Colection {
   }
 
   endOfLearn() {
+    console.log("Done2");
     let chit = document.querySelector(".fiszka");
     chit.innerHTML = `Done!`;
   }
