@@ -106,13 +106,23 @@ class Colection {
     card.show(this.isFront);
     const knowButton = document.querySelector(".know-button");
     const unknowButton = document.querySelector(".unknow-button");
-    const getWordButton = document.querySelector("#get-word-button");
     knowButton.addEventListener("click", this.pass.bind(this));
     unknowButton.addEventListener("click", this.fail.bind(this));
-    getWordButton.addEventListener("click", () => {
-      this.isFront = true;
-      this.display();
-    });
+    if (this.isFront) {
+      const getTranslateButton = document.querySelector(
+        "#get-translate-button"
+      );
+      getTranslateButton.addEventListener("click", () => {
+        this.isFront = false;
+        this.display();
+      });
+    } else {
+      const getWordButton = document.querySelector("#get-word-button");
+      getWordButton.addEventListener("click", () => {
+        this.isFront = true;
+        this.display();
+      });
+    }
   }
 
   getXY(e) {
