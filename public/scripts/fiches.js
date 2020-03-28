@@ -93,6 +93,7 @@ class Colection {
   }
 
   display() {
+    console.log(this.cards);
     let chit = document.querySelector(".fiszka");
     chit.innerHTML = ``;
     let actualCard = this.cards[this.idOfCard];
@@ -166,9 +167,7 @@ class Colection {
       this.idOfCard =
         (this.idOfCard + this.quantityOfCards - 1) % this.quantityOfCards;
     } while (this.cards[this.idOfCard].quantityOfRepeats !== -1);
-    this.isFront = false;
     this.display();
-    console.log(this.cards);
   }
 }
 
