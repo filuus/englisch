@@ -87,7 +87,7 @@ body {
   grid-row: 3/4;
   place-self: center;
   color: #6f6f6f;
-  font-size: 3rem;
+  font-size: 1rem;
   text-decoration: none;
   cursor: pointer;
 }
