@@ -86,9 +86,9 @@ class Colection {
   pass() {
     this.cards[this.idOfCard].quantityOfRepeats = this.quantityOfLoops;
     if (!this.cards.filter(el => el.quantityOfRepeats != -1)) {
-      this.next();
-    } else {
       this.endOfLearn();
+    } else {
+      this.next();
     }
   }
 
