@@ -88,7 +88,6 @@ class Colection {
     const tempCards = this.cards.filter(el => el.quantityOfRepeats === -1);
     console.log(tempCards);
     if (tempCards.length === 0) {
-      console.log("Done1");
       this.endOfLearn();
     } else {
       this.next();
@@ -100,9 +99,24 @@ class Colection {
   }
 
   endOfLearn() {
-    console.log("Done2");
     let chit = document.querySelector(".fiszka");
-    chit.innerHTML = `Done!`;
+    const body = document.querySelector("body");
+    chit.remove();
+    const span = createElement("span");
+    span.innerText = "Well Done!";
+    body.appendChild(span);
+    fetch(url, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(this.cards)
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log("Dodałem powtórki:");
+        console.log(res);
+      });
   }
 
   display() {

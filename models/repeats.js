@@ -17,3 +17,12 @@ module.exports.getFiches = (userId, sectionId, level, limit) => {
       [userId, 99, sectionId, level, limit]
     );
 };
+
+module.exports.updateRepeat = (userId, wordId, quantityOfRepeat) => {
+  return connection
+    .promise()
+    .query(
+      "UPDATE repeats SET quantity_of_repeat = ?  WHERE id_user = ? AND id_word = ?",
+      [quantityOfRepeat, userId, wordId]
+    );
+};

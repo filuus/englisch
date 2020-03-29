@@ -58,4 +58,6 @@ router.get(
   FichesController.getAllFiches
 );
 
+router.post("/fiches/addRepeats", FichesController.addRepeats);
+
 module.exports = router;
