@@ -102,7 +102,7 @@ class Colection {
     let chit = document.querySelector(".fiszka");
     const body = document.querySelector("body");
     chit.remove();
-    const span = createElement("span");
+    const span = document.createElement("span");
     span.innerText = "Well Done!";
     body.appendChild(span);
     fetch("/fiches/addRepeats", {
