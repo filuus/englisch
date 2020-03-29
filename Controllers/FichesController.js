@@ -21,7 +21,6 @@ exports.getAllFiches = (req, res) => {
   });
 
   exports.addRepeats = (req, res) => {
-    console.log(req);
     Repeats.updateRepeat(1, 1, 5);
   };
 };
