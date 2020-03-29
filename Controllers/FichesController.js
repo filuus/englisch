@@ -19,9 +19,9 @@ exports.getAllFiches = (req, res) => {
   ).then(function([rows, fields]) {
     res.send(rows);
   });
+};
 
-  exports.addRepeats = (req, res) => {
-    console.log(req, res);
-    // Repeats.updateRepeat(1, 1, 5);
-  };
+exports.addRepeats = (req, res) => {
+  console.log(req, res);
+  Repeats.updateRepeat(1, 1, 5);
 };
