@@ -105,7 +105,7 @@ class Colection {
     const span = createElement("span");
     span.innerText = "Well Done!";
     body.appendChild(span);
-    fetch(url, {
+    fetch("/fiches/addRepeats", {
       method: "post",
       headers: {
         "Content-Type": "application/json"
