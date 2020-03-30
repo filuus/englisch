@@ -100,7 +100,7 @@ class Colection {
 
   endOfLearn() {
     fetch("/fiches/addRepeats", {
-      method: "post",
+      method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
