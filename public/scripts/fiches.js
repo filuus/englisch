@@ -104,7 +104,7 @@ class Colection {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ test: "test" })
+      body: JSON.stringify(this.cards)
     })
       .then(res => {
         console.log("Dodałem powtórki:");
