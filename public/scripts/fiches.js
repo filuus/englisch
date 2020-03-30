@@ -105,18 +105,16 @@ class Colection {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({ test: "test" })
-    })
-      .then(res => res.json())
-      .then(res => {
-        console.log("Dodałem powtórki:");
-        console.log(res);
-        let chit = document.querySelector(".fiszka");
-        const body = document.querySelector("body");
-        chit.remove();
-        const span = document.createElement("span");
-        span.innerText = "Well Done!";
-        body.appendChild(span);
-      });
+    }).then(res => {
+      console.log("Dodałem powtórki:");
+      console.log(res);
+      let chit = document.querySelector(".fiszka");
+      const body = document.querySelector("body");
+      chit.remove();
+      const span = document.createElement("span");
+      span.innerText = "Well Done!";
+      body.appendChild(span);
+    });
   }
 
   display() {
