@@ -105,16 +105,18 @@ class Colection {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(this.cards)
-    }).then(res => {
-      console.log("Dodałem powtórki:");
-      console.log(res);
-      let chit = document.querySelector(".fiszka");
-      const body = document.querySelector("body");
-      chit.remove();
-      const span = document.createElement("span");
-      span.innerText = "Well Done!";
-      body.appendChild(span);
-    });
+    })
+      .then(res => {
+        console.log("Dodałem powtórki:");
+        console.log(res);
+        let chit = document.querySelector(".fiszka");
+        const body = document.querySelector("body");
+        chit.remove();
+        const span = document.createElement("span");
+        span.innerText = "Well Done!";
+        body.appendChild(span);
+      })
+      .catch(err => console.log(err));
   }
 
   display() {
