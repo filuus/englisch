@@ -105,7 +105,7 @@ class Colection {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(this.cards)
-    });
+    }).then(res => console.log(res));
   }
 
   display() {
