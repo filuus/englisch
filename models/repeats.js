@@ -19,6 +19,7 @@ module.exports.getFiches = (userId, sectionId, level, limit) => {
 };
 
 module.exports.updateRepeat = (userId, wordId, quantityOfRepeat) => {
+  console.log("start update");
   return connection
     .promise()
     .query(
