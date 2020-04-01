@@ -22,9 +22,12 @@ exports.getAllFiches = (req, res) => {
 };
 
 exports.addRepeats = (req, res) => {
-  console.log(req.body);
-  // req.body.forEach(element => {
-  //   Repeats.updateRepeat(1, 2, 5);
-  // });
+  // console.log(req.body);
+  req.body.forEach(element => {
+    Repeats.getWord(req.session.user.id, element.id).then(([rows, fields]) => {
+      console.log(rows);
+      Repeats.updateRepeat(req.session.user.id, element.id, 6);
+    });
+  });
   res.send({ status: "succes" });
 };
