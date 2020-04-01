@@ -23,6 +23,8 @@ exports.getAllFiches = (req, res) => {
 
 exports.addRepeats = (req, res) => {
   console.log(req.body);
-  Repeats.updateRepeat(1, 2, 5);
+  // req.body.forEach(element => {
+  //   Repeats.updateRepeat(1, 2, 5);
+  // });
   res.send({ status: "succes" });
 };
