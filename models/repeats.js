@@ -9,6 +9,15 @@ module.exports.getWord = (userId, wordId) => {
     ]);
 };
 
+module.exports.takeWord = (userId, wordId) => {
+  return connection
+    .promise()
+    .query(
+      "SELECT id, id_user, id_word, quantity_of_repeats FROM repeats WHERE id_user = ? AND id_word = ?",
+      [userId, wordId]
+    );
+};
+
 module.exports.getFiches = (userId, sectionId, level, limit) => {
   return connection
     .promise()
