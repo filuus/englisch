@@ -26,7 +26,15 @@ exports.addRepeats = (req, res) => {
   req.body.forEach(element => {
     Repeats.takeWord(req.session.user.id, element.id).then(([rows, fields]) => {
       console.log(rows[0].quantity_of_repeat);
-      Repeats.updateRepeat(req.session.user.id, element.id, 6);
+      if (rows[0].quantity_of_repeat === 99) {
+        Repeats.updateRepeat(req.session.user.id, element.id, 5);
+      } else {
+        Repeats.updateRepeat(
+          req.session.user.id,
+          element.id,
+          rows[0].quantity_of_repeat - 1
+        );
+      }
     });
   });
   res.send({ status: "succes" });
