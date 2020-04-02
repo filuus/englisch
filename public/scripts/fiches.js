@@ -99,13 +99,19 @@ class Colection {
   }
 
   endOfLearn() {
+    const chit = document.querySelector(".fiszka");
+    const body = document.querySelector("body");
     fetch("/fiches/addRepeats", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(this.cards)
-    }).then(res => console.log(res));
+    }).then(res => {
+      chit.remove();
+      body.innerText = `Well done!`;
+      console.log(res);
+    });
   }
 
   display() {
