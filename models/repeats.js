@@ -13,7 +13,7 @@ module.exports.takeWord = (userId, wordId) => {
   return connection
     .promise()
     .query(
-      "SELECT id, id_user, id_word, quantity_of_repeats FROM repeats WHERE id_user = ? AND id_word = ?",
+      "SELECT id, id_user, id_word, quantity_of_repeat FROM repeats WHERE id_user = ? AND id_word = ?",
       [userId, wordId]
     );
 };
