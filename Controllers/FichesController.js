@@ -25,7 +25,7 @@ exports.addRepeats = (req, res) => {
   // console.log(req.body);
   req.body.forEach(element => {
     Repeats.takeWord(req.session.user.id, element.id).then(([rows, fields]) => {
-      console.log(rows);
+      console.log(rows[0].quantity_of_repeat);
       Repeats.updateRepeat(req.session.user.id, element.id, 6);
     });
   });
