@@ -39,3 +39,7 @@ exports.addRepeats = (req, res) => {
   });
   res.send({ status: "succes" });
 };
+
+exports.calcPercent = x => {
+  return x;
+};
