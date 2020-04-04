@@ -108,9 +108,12 @@ class Colection {
       },
       body: JSON.stringify(this.cards)
     }).then(res => {
+   
+   
       chit.remove();
-      body.innerText = `Well done!`;
-      console.log(res);
+      const sapn = document.createElement("span");
+      span.innerText = `Well done!`;
+      body.appendChild(span);
     });
   }
 
