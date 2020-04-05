@@ -36,7 +36,7 @@ html
                     ul
                         each val, index in bunches
                             li
-                                a(href=`/fiches/${index + 1}/show`) #{val} #{calcPercent(index)}
+                                a(href=`/fiches/${index + 1}/show`) #{val} #{calcPercent(index + 1)}
 
                 li
                     div(class="divider")

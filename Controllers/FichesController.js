@@ -40,6 +40,17 @@ exports.addRepeats = (req, res) => {
   res.send({ status: "succes" });
 };
 
-exports.calcPercent = x => {
-  return x;
+exports.calcPercent = sectionId => {
+  const quantityOfAll = Repeats.getAllFichesCount(
+    req.session.user.id,
+    sectionId,
+    req.session.user.level
+  );
+  const quantityOfLearn = Repeats.getLearnFichesCount(
+    req.session.user.id,
+    sectionId,
+    req.session.user.level
+  );
+  const result = quantityOfLearn / quantityOfAll;
+  return result;
 };

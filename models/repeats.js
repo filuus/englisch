@@ -27,6 +27,24 @@ module.exports.getFiches = (userId, sectionId, level, limit) => {
     );
 };
 
+module.exports.getAllFichesCount = (userId, sectionId, level) => {
+  return connection
+    .promise()
+    .query(
+      "SELECT count(*) FROM repeats JOIN words ON repeats.id_word = words.id WHERE repeats.id_user = ? AND words.id_section = ? AND words.level = ?",
+      [userId, sectionId, level]
+    );
+};
+
+module.exports.getLearnFichesCount = (userId, sectionId, level) => {
+  return connection
+    .promise()
+    .query(
+      "SELECT count(*) FROM repeats JOIN words ON repeats.id_word = words.id WHERE repeats.id_user = ? AND words.id_section = ? AND words.level = ? AND repeats.quantity_of_repeat != 99 ",
+      [userId, sectionId, level]
+    );
+};
+
 module.exports.updateRepeat = (userId, wordId, quantityOfRepeat) => {
   return connection
     .promise()
