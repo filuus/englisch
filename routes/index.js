@@ -29,7 +29,7 @@ function getBunches(req, res, next) {
     }
     console.log(bunches);
     res.locals.bunches = bunches;
-    res.locals.calcPercent = FichesController.calcPercent;
+    res.locals.calcPercent = FichesController.calcPercent.resolve;
     next();
   });
 }
