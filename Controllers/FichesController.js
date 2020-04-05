@@ -44,5 +44,8 @@ exports.calcPercent = (userId, sectionId, level) => {
   const quantityOfAll = Repeats.getAllFichesCount(userId, sectionId, level);
   const quantityOfLearn = Repeats.getLearnFichesCount(userId, sectionId, level);
   const result = quantityOfLearn / quantityOfAll;
+  console.log(quantityOfAll);
+  console.log(quantityOfLearn);
+  console.log(result);
   return result;
 };
