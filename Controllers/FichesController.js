@@ -40,17 +40,9 @@ exports.addRepeats = (req, res) => {
   res.send({ status: "succes" });
 };
 
-exports.calcPercent = sectionId => {
-  const quantityOfAll = Repeats.getAllFichesCount(
-    req.session.user.id,
-    sectionId,
-    req.session.user.level
-  );
-  const quantityOfLearn = Repeats.getLearnFichesCount(
-    req.session.user.id,
-    sectionId,
-    req.session.user.level
-  );
+exports.calcPercent = (userId, sectionId, level) => {
+  const quantityOfAll = Repeats.getAllFichesCount(userId, sectionId, level);
+  const quantityOfLearn = Repeats.getLearnFichesCount(userId, sectionId, level);
   const result = quantityOfLearn / quantityOfAll;
   return result;
 };
