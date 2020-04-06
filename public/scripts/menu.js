@@ -19,5 +19,7 @@ activeElements.forEach((element, index, array) => {
 });
 
 const fichesCategory = document.querySelectorAll(`.bunches > ul > li > a`);
-console.log(fichesCategory);
-// fetch("/fiches/calcPercent").then(result => console.log(esult));
+fichesCategory.forEach((element, index, array) => {
+  console.log(index);
+  fetch(`/fiches/${index}/calcPercent`).then(result => console.log(result));
+});

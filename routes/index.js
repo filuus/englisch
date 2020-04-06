@@ -60,6 +60,6 @@ router.get(
 
 router.post("/fiches/addRepeats", FichesController.addRepeats);
 
-router.get("/fiches/calcPercent", FichesController.calcPercent);
+router.get("/fiches/:idBunch/calcPercent", FichesController.calcPercent);
 
 module.exports = router;
