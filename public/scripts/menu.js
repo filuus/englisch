@@ -17,3 +17,7 @@ disactiveElements.forEach((element, index, array) => {
 activeElements.forEach((element, index, array) => {
   element.parentElement.classList.add("active");
 });
+
+const fichesCategory = document.querySelectorAll(`.bunches > ul > li > a`);
+console.log(fichesCategory);
+// fetch("/fiches/calcPercent").then(result => console.log(esult));

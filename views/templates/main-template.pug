@@ -36,7 +36,7 @@ html
                     ul
                         each val, index in bunches
                             li
-                                a(href=`/fiches/${index + 1}/show`) #{val} #{calcPercent(user.id, index + 1, user.level).then(result => console.log(result))}
+                                a(href=`/fiches/${index + 1}/show`) #{val}
 
                 li
                     div(class="divider")

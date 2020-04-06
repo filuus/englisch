@@ -29,7 +29,6 @@ function getBunches(req, res, next) {
     }
     console.log(bunches);
     res.locals.bunches = bunches;
-    res.locals.calcPercent = FichesController.calcPercent;
     next();
   });
 }
@@ -60,5 +59,7 @@ router.get(
 );
 
 router.post("/fiches/addRepeats", FichesController.addRepeats);
+
+router.get("/fiches/calcPercent", FichesController.calcPercent);
 
 module.exports = router;

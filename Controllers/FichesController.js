@@ -50,9 +50,6 @@ exports.calcPercent = (userId, sectionId, level) => {
     );
     Promise.all[(quantityOfAll, quantityOfLearn)].then(() => {
       const result = quantityOfLearn / quantityOfAll;
-      console.log(quantityOfAll);
-      console.log(quantityOfLearn);
-      console.log(result);
       resolve(result);
     });
   });
