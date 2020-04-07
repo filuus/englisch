@@ -53,6 +53,6 @@ exports.calcPercent = (req, res) => {
   );
   Promise.all([quantityOfAll, quantityOfLearn]).then(values => {
     const result = values[1] / values[0];
-    res.send(result);
+    res.send({result: result});
   });
 };
