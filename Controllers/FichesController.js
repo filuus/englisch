@@ -41,20 +41,18 @@ exports.addRepeats = (req, res) => {
 };
 
 exports.calcPercent = (req, res) => {
-  return new Promise((resolve, reject) => {
-    const quantityOfAll = Repeats.getAllFichesCount(
-      req.session.user.id,
-      req.params.idBunch,
-      req.session.user.level
-    );
-    const quantityOfLearn = Repeats.getLearnFichesCount(
-      req.session.user.id,
-      req.params.idBunch,
-      req.session.user.level
-    );
-    Promise.all[(quantityOfAll, quantityOfLearn)].then(() => {
-      const result = quantityOfLearn / quantityOfAll;
-      resolve(result);
-    });
+  const quantityOfAll = Repeats.getAllFichesCount(
+    req.session.user.id,
+    req.params.idBunch,
+    req.session.user.level
+  );
+  const quantityOfLearn = Repeats.getLearnFichesCount(
+    req.session.user.id,
+    req.params.idBunch,
+    req.session.user.level
+  );
+  Promise.all[(quantityOfAll, quantityOfLearn)].then(() => {
+    const result = quantityOfLearn / quantityOfAll;
+    res.send(result);
   });
 };
