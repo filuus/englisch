@@ -41,6 +41,7 @@ exports.addRepeats = (req, res) => {
 };
 
 exports.calcPercent = (req, res) => {
+  console.log("lkjmlkjlk");
   const quantityOfAll = Repeats.getAllFichesCount(
     req.session.user.id,
     req.params.idBunch,
