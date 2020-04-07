@@ -54,6 +54,6 @@ exports.calcPercent = (req, res) => {
   );
   Promise.all[(quantityOfAll, quantityOfLearn)].then(() => {
     const result = quantityOfLearn / quantityOfAll;
-    res.send(8);
   });
+  res.send(8);
 };
