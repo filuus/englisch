@@ -41,7 +41,6 @@ exports.addRepeats = (req, res) => {
 };
 
 exports.calcPercent = (req, res) => {
-  console.log("lkjmlkjlk");
   const quantityOfAll = Repeats.getAllFichesCount(
     req.session.user.id,
     req.params.idBunch,
@@ -52,8 +51,8 @@ exports.calcPercent = (req, res) => {
     req.params.idBunch,
     req.session.user.level
   );
-  // Promise.all[(quantityOfAll, quantityOfLearn)].then(() => {
-  //   const result = quantityOfLearn / quantityOfAll;
-  // });
-  res.send({ status: "succes" });
+  Promise.all([quantityOfAll, quantityOfLearn]).then(() => {
+    const result = quantityOfLearn / quantityOfAll;
+    res.send(result);
+  });
 };
