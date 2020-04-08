@@ -51,9 +51,11 @@ exports.calcPercent = (req, res) => {
     req.params.idBunch,
     req.session.user.level
   );
-  Promise.all([quantityOfAll, quantityOfLearn]).then(values => {
-    console.log(values);
-    const result = values[1] / values[0];
-    res.send({ result: result });
-  });
+  Promise.all([quantityOfAll, quantityOfLearn]).then(
+    ([[rowsAll, fieldsAll], [rowsLearn, fieldsLearn]]) => {
+      console.log(rowsAll, rowsLearn);
+      const result = rowsLearn / rowsAll;
+      res.send({ result: result });
+    }
+  );
 };
