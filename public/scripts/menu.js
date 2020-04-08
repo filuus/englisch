@@ -22,6 +22,6 @@ const fichesCategory = document.querySelectorAll(`.bunches > ul > li > a`);
 fichesCategory.forEach((element, index, array) => {
   console.log(index);
   fetch(`/fiches/${index}/calcPercent`)
-    .then(result => result.json())
-    .then(result => console.log(result));
+    .then(response => response.json())
+    .then(response => console.log(response.result));
 });
