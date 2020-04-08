@@ -54,7 +54,7 @@ exports.calcPercent = (req, res) => {
   Promise.all([quantityOfAll, quantityOfLearn]).then(
     ([[rowsAll, fieldsAll], [rowsLearn, fieldsLearn]]) => {
       const result = 0;
-      console.log(rowsAll[`count(*)`], rowsLearn[`count(*)`]);
+      console.log(rowsAll[0][`count(*)`], rowsLearn[0][`count(*)`]);
       if (rowsAll[`count(*)`]) {
         result = rowsLearn[`count(*)`] / rowsAll[`count(*)`];
       }
