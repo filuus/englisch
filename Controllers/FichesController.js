@@ -55,7 +55,7 @@ exports.calcPercent = (req, res) => {
     ([[rowsAll, fieldsAll], [rowsLearn, fieldsLearn]]) => {
       const result = 0;
       console.log(rowsAll[0][`count(*)`], rowsLearn[0][`count(*)`]);
-      if (rowsAll[0][`count(*)`]) {
+      if (rowsAll[0][`count(*)`] !== 0) {
         result = rowsLearn[0][`count(*)`] / rowsAll[0][`count(*)`];
       }
       res.send({ result: result });
