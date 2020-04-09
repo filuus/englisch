@@ -21,14 +21,14 @@ activeElements.forEach((element, index, array) => {
 const fichesCategory = document.querySelectorAll(`.bunches > ul > li > a`);
 fichesCategory.forEach((element, index, array) => {
   console.log(index);
-  const progrssBar = document.querySelector(`progress-bar-${index + 1}`);
+  const progressBar = document.querySelector(`.progress-bar-${index + 1}`);
   fetch(`/fiches/${index + 1}/calcPercent`)
     .then(response => response.json())
     .then(response => {
       return (response.result * 100).toFixed(2) + "%";
     })
     .then(response => {
-      progrssBar.innerText = response;
-      element.appendChild(progrssBar);
+      progressBar.innerText = response;
+      element.appendChild(progressBar);
     });
 });
