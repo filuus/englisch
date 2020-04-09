@@ -25,7 +25,7 @@ fichesCategory.forEach((element, index, array) => {
   fetch(`/fiches/${index + 1}/calcPercent`)
     .then(response => response.json())
     .then(response => {
-      return (response.result * 100).toFixed(2) + "%";
+      return (response.result * 100).toFixed(0) + "%";
     })
     .then(response => {
       progressBar.innerText = response;
