@@ -16,8 +16,8 @@
 
 .bunch-menu > .bunch-title {
   grid-column: 1/2;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  justify-self: center;
 }
 
 .bunch-menu > .progress-bar {
