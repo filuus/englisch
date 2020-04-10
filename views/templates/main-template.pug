@@ -36,7 +36,8 @@ html
                     ul
                         each val, index in bunches
                             li
-                                a(href=`/fiches/${index + 1}/show` class="bunch-menu") #{val}
+                                a(href=`/fiches/${index + 1}/show` class="bunch-menu")
+                                    span(class="banch-title") #{val}
                                     span(class=`progress-bar-${index + 1} progress-bar`)
                 li
                     div(class="divider")

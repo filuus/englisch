@@ -9,7 +9,15 @@
 }
 
 .bunches > ul > li > .bunch-menu {
-  display: flex;
-  justify-content: flex-end;
-  text-align: left;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 1fr;
+}
+
+.bunch-menu > .bunch-title {
+  grid-column: 1/2;
+}
+
+.bunch-menu > .progress-bar {
+  grid-column: 2/3;
 }
