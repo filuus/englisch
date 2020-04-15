@@ -24,6 +24,6 @@
 }
 
 .inactive {
-  color: grey;
+  color: grey !important;
   cursor: not-allowed;
 }

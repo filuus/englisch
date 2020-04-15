@@ -27,6 +27,7 @@ fichesCategory.forEach((element, index, array) => {
     .then(response => {
       if (response.result === 1) {
         element.classList.add("inactive");
+        element.href = "#";
       }
       return (response.result * 100).toFixed(0) + "%";
     })
