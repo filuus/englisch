@@ -53,7 +53,7 @@ exports.calcPercent = (req, res) => {
   );
   Promise.all([quantityOfAll, quantityOfLearn]).then(
     ([[rowsAll, fieldsAll], [rowsLearn, fieldsLearn]]) => {
-      let result = 0;
+      let result = 1;
       console.log(rowsAll[0][`count(*)`], rowsLearn[0][`count(*)`]);
       if (rowsAll[0][`count(*)`] != 0) {
         console.log("weszlo");
