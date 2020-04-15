@@ -25,10 +25,13 @@ fichesCategory.forEach((element, index, array) => {
   fetch(`/fiches/${index + 1}/calcPercent`)
     .then(response => response.json())
     .then(response => {
+      if (response.result === 1) {
+        element.classList.add("inactive");
+      }
       return (response.result * 100).toFixed(0) + "%";
     })
     .then(response => {
       progressBar.innerText = response;
-      element.appendChild(progressBar);
+      // element.appendChild(progressBar);
     });
 });

@@ -22,3 +22,8 @@
 .bunch-menu > .progress-bar {
   grid-column: 2/3;
 }
+
+.inactive {
+  color: grey;
+  cursor: not-allowed;
+}
