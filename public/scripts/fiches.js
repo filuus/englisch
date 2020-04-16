@@ -109,8 +109,7 @@ class Colection {
       body: JSON.stringify(this.cards)
     }).then(res => {
       const modals = document.querySelectorAll(".modal");
-      var instance = M.Modal.init(modals, {});
-      instance.open();
+      M.Modal.init(modals, {});
     });
   }
 
