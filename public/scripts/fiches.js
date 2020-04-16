@@ -108,10 +108,8 @@ class Colection {
       },
       body: JSON.stringify(this.cards)
     }).then(res => {
-      chit.remove();
-      const span = document.createElement("span");
-      span.innerText = `Well done!`;
-      body.appendChild(span);
+      const modals = document.querySelectorAll(".modal");
+      var instances = M.Modal.init(modals, {});
     });
   }
 
